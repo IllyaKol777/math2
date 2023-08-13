@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .timer {
+  text-align: center;
+  padding: 40px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+}
+
+.timer h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.getting-started {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.hr, .min, .sec {
+  text-align: center;
+  margin: 0 20px;
+}
+
+.dial {
+  font-size: 36px;
+  font-weight: bold;
+  background-color: #1e52ff;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+p b {
+  font-weight: bold;
+  display: block;
+  margin-top: 20px;
+}
+
+    </style>
+    <div class="timer">
+        <h3>до закінчення акції залишилось:</h3>
+        <div class="getting-started">
+          <div class="hr"><div class="dial" id="hours">00</div>годин</div>
+          <div class="min"><div class="dial" id="minutes">00</div>хвилин</div>
+          <div class="sec"><div class="dial" id="seconds">00</div>секунд</div>
+        </div>
+        <p><b>Ви нічим не ризикуєте...</b></p>
+      </div>
+      <script>
+        function updateTimer() {
+        const deadline = new Date("2023-08-10T14:30:00").getTime(); // Задайте дату та час закінчення акції
+        const now = new Date().getTime();
+        const timeLeft = deadline - now;
+      
+        const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+      
+        document.getElementById("hours").textContent = hours < 10 ? "0" + hours : hours;
+        document.getElementById("minutes").textContent = minutes < 10 ? "0" + minutes : minutes;
+        document.getElementById("seconds").textContent = seconds < 10 ? "0" + seconds : seconds;
+      
+        if (timeLeft < 0) {
+          clearInterval(interval);
+          document.querySelector(".getting-started").innerHTML = "<div class='expired'>Акція закінчилась</div>";
+        }
+      }
+      
+      const interval = setInterval(updateTimer, 1000);
+      updateTimer();
+      </script>
+      
+      
+</body>
+</html>

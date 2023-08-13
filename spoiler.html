@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .s14 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .accordion_item {
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .title_block {
+            background-color: #f2f2f2;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .info {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        .info.active {
+            max-height: 1000px;
+        }
+        .accordion .title_block {
+  cursor:pointer;
+  background: linear-gradient(145.49deg, #ff9705 0%, #FFDFAE 100%);
+  border-radius: 13px;
+  padding:25px 80px 25px 40px;
+  -webkit-transition:all .2s linear 0;
+  -webkit-transition-delay:.2s 0;
+  transition:all .2s linear 0;
+  margin: 0;
+  font-weight: normal;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+        .accordion .plus {
+            cursor: pointer;
+            position: absolute; /* Зміщуємо плюсик у відношенні до title_block */
+            top: 50%; /* Позиціонуємо по вертикалі на середину */
+            right: 20px; /* Зміщуємо вправо */
+            transform: translateY(-50%); /* Вирівнюємо вертикально */
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 18px;
+            transition: background-color 0.2s ease-in-out;
+}
+        </style>
+    <title>Accordion Example</title>
+</head>
+<body>
+    <section class="s14">
+        <div class="container">
+            <h2>Часті питання</h2>
+            <div class="accordion">
+                <section class="accordion_item">
+                    <div class="title_block">Які ресурси треба мати, щоб впровадити інструменти курсу?<div class="plus">+</div></div>
+                    <div class="info">
+                        <p>Лише ваш час та зусилля </p>
+                    </div>
+                </section>
+                <section class="accordion_item">
+                    <div class="title_block">Це точно допоможе?<span class="plus">+</span></div>
+                    <div class="info">
+                        <p>Схема неодноразово перевірена на моєму досвіді і досвіді моїх колег. На курсі буде готовий план дій, вам залишиться тільки їх реалізувати і отримати гарантований результат!</p>
+                    </div>
+                </section>
+                <!-- Додайте решту секцій інформації тут -->
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionItems = document.querySelectorAll('.accordion_item');
+
+            accordionItems.forEach(item => {
+                const title = item.querySelector('.title_block');
+                const info = item.querySelector('.info');
+
+                title.addEventListener('click', () => {
+                    info.classList.toggle('active');
+                    if (info.classList.contains('active')) {
+                        info.style.maxHeight = info.scrollHeight + 'px';
+                    } else {
+                        info.style.maxHeight = null;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

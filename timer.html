@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .timer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+.getting-started {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 24px;
+}
+
+.hr, .min, .sec {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+.dial {
+  font-size: 36px;
+  font-weight: bold;
+  color: #ffaa29;
+}
+
+p b {
+  display: block;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+    </style>
+    <div class="timer">
+        <h3>до закінчення акції залишилось:</h3>
+        <div class="getting-started">
+          <div class="hr"><div class="dial">00</div>годин</div>
+          <div class="min"><div class="dial">00</div>хвилин</div>
+          <div class="sec"><div class="dial">00</div>секунд</div>
+        </div>
+        <p><b>Ви нічим не ризикуєте...</b></p>
+      </div>
+
+      <script>
+        function updateTimer() {
+          const now = new Date();
+          const endDate = new Date('2023-08-10T15:24:00'); // Змініть на дату закінчення акції
+      
+          const timeLeft = endDate - now;
+      
+          const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+          const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+      
+          document.querySelector('.hr .dial').textContent = hours.toString().padStart(2, '0');
+          document.querySelector('.min .dial').textContent = minutes.toString().padStart(2, '0');
+          document.querySelector('.sec .dial').textContent = seconds.toString().padStart(2, '0');
+        }
+      
+        updateTimer();
+        setInterval(updateTimer, 1000);
+      </script>
+      
+</body>
+</html>
