@@ -46,9 +46,9 @@ input[type='text']{
   text-align: center;
 }
 a, input[type='submit']{
-	background: linear-gradient(92.72deg, #FFFFFF 0%, #FFF4E3 100%);
+	background: linear-gradient(92.72deg, #FFFFFF 0%, #ffffff 100%);
   box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.45);
-  border-radius: 0px 30.5px;
+  border-radius: 30.5px 30.5px;
 	padding: 20px 0;
   border: none;
   font-weight: 700;
@@ -62,6 +62,7 @@ a{
 	width: 70%;
   margin-top: 20px;
 }
+
 input[type='submit']{
 	width: 100%;
 }
@@ -130,16 +131,16 @@ img{
 }
 .accordion .title_block {
   cursor:pointer;
-  background: linear-gradient(145.49deg, #ff9705 0%, #FFDFAE 100%);
+  background: linear-gradient(145.49deg, #ffffff 0%, #ffffff 100%);
   border-radius: 13px;
-  padding:25px 80px 25px 40px;
+  padding: 25px 80px 35px 40px;
   -webkit-transition:all .2s linear 0;
   -webkit-transition-delay:.2s 0;
   transition:all .2s linear 0;
   margin: 0;
   font-weight: normal;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .accordion .title_block:before {
   content:'+';
@@ -153,7 +154,7 @@ img{
   color: #171717;
   text-align: center;
   line-height: 40px;
-  border: 3px solid #FFAA29;
+  border: 3px solid #000000;
 }
 .accordion .active_block .title_block:before {
   content:'-';
@@ -175,6 +176,8 @@ img{
   line-height: 1.5;
   width: 100%;
   margin: 0;
+  font-size: 18px;
+  color: #ffffff;
 }
 
 .getting-started{
@@ -361,9 +364,12 @@ img{
 
 .s2{
   padding-top: 100px;
+  background-color: #fff;
+  color: #000;
 }
 .s2 h2{
   text-align: left;
+  color: #000000;
 }
 .s2 .bg{
   background: url('../img/bg.png') no-repeat;
@@ -372,9 +378,11 @@ img{
   padding: 20px 100px;
   text-align: center;
   margin: 20px 0;
+  background-color: #fff;
+  color: #000;
 }
 .s2 .bg h3{
-  color: #fff;
+  color: #000000;
   font-weight: 700;
   font-size: 24px;
   text-transform: uppercase;
@@ -395,7 +403,7 @@ img{
   font-size: 15px;
 }
 .s3 h2 span,.s5 h2 span,.s6 h2 span,.s5 .num span,.s6 .bg h3 span{
-  color: #FFAA29;
+  color: #ffffff;
 }
 .s3 {
   background-color: #1e52ff;
@@ -422,18 +430,25 @@ img{
   display: block;
 }
 .s4{
-  background: linear-gradient(180deg, #FFAA29 0%, #FFAA29 8.33%, #FFAA29 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 8.33%, #ffffff 100%);
+  color: #14245a;
+  background-image: url('../img/s12.webp');
+  font-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .s4 h2{
-  color: #fff;
+  color: #1e52ff;
 }
 .s4 .content{
-  background: linear-gradient(145.49deg, #FFC876 0%, #FFBB54 100%);
+  background: linear-gradient(145.49deg, #1e52ff 0%, #1e52ff 100%);
   border-radius: 13px;
   display: block;
   margin: 0 auto;
   width: 50%;
   padding: 40px;
+  color: #fff;
 }
 .s4 p:not(.s4 p:last-child){
   margin-bottom: 30px;
@@ -509,10 +524,11 @@ img{
   padding: 0;
 }
 .s8{
-  background: linear-gradient(180deg, #FFAA29 0%, #FFAA29 8.33%, #FFAA29 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 8.33%, #ffffff 100%);
 }
 .s8 h2{
   text-align: left;
+  color: #000000;
 }
 .s8 h2 span{
   color: #fff;
@@ -538,7 +554,10 @@ img{
   transform: rotate(6deg);
   bottom: 50%;
 }
-.s8 button{
+.s8 a{
+  background: none;
+  background-color: #000000;
+  color: #fff;
   margin: 0;
   width: 65%;
   margin-top: 40px;
@@ -597,10 +616,12 @@ img{
   width: 13%;
 }
 .s4_2 h2{
-  color: #171717;
+  color: #1e52ff;
 }
 .s4_2 h2 span{
-  color: #fff;
+  color: #14245a;
+  font-weight: bold;
+  font-size: 40px;
 }
 .s4_2 .lbl{
   display: block;
@@ -662,10 +683,12 @@ img{
   margin-bottom: 40px;
   justify-content: center;
 }
+
 .s13 h2{
   margin-bottom: 0;
   padding-right: 20px;
 }
+
 .s13 .content{
   background: linear-gradient(145.49deg, #FFF0DB 0%, #FFDFAE 100%);
   border-radius: 13px;
@@ -674,13 +697,15 @@ img{
   margin: 0 auto;
   width: 50%;
 }
+
 footer{
   padding: 55px 0;
   font-size: 14px;
-  background: #FFAA29;
-  color: #ffffff;
+  background: #ffffff;
+  color: #000000;
   padding-bottom: 100px;
 }
+
 footer a{
   color: #FFAA29;
   text-decoration: underline;
@@ -690,6 +715,16 @@ footer a{
   text-align: center;
   text-decoration: none;
 }
+
+.reset-styles {
+  color: #004fc6;
+  text-decoration: none;
+  outline: initial;
+  background: initial;
+  box-shadow: initial;
+  border-radius: initial;
+}
+
 footer p{
   margin-top: 20px;
   margin-bottom: 10px;
